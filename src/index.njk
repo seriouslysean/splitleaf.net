@@ -62,72 +62,78 @@
 
         <style>
             body {
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                color: #000;
                 background: #e6ece6;
-                text-align: center;
-                font-family: sans-serif;
-                font-size: 1em;
             }
-            #content {
-                position: fixed;
-                top: 50%;
-                right: 0;
-                left: 0;
-                bottom: 0;
-                height: auto;
-                width: 100%;
-                max-width: 500px;
+            a {
+                color: #739376;
+                text-decoration: none;
+            }
+            a:active,
+            a:hover,
+            a:visited {
+                color: #455a48;
+                text-decoration: underline;
+            }
+            .container {
                 margin: 0 auto;
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
             }
-            #logo {
+            .logo {
                 display: block;
                 height: auto;
                 margin: 0 auto 60px;
+            }
+            .logo__img {
                 width: 100%;
                 max-width: 300px;
             }
-            #links,
-            #links li {
+            .title {
+                text-transform: uppercase;
+                color: #00151a;
+                font-size: 3em;
+                font-weight: bold;
+                margin-bottom: 1em;
+            }
+            .title__half {
+                color: #02657f;
+                font-style: normal;
+            }
+            .links {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .links__item {
                 display: inline;
                 margin: 0;
                 padding: 0;
-                list-style: none;
             }
-            #links a,
-            #links a:link,
-            #links a:visited {
-                color: #739376;
+            .links__link {
                 display: inline-block;
-                padding: 5px 15px;
-                text-decoration: none;
-                text-shadow: 0 1px 0 #c9d5ca;
-                transition: all .15s ease-in-out;
-            }
-            #links a:active,
-            #links a:hover {
-                color: #455a48;
-                text-shadow: 0 1px 0 #819e84;
+                margin: 0 0.5em 1em;
             }
         </style>
     </head>
 
     <body>
 
-        <main id="content">
-            <img src="/img/logo-splitleaf.svg" alt="Splitleaf, LLC logo" id="logo" width="300">
-
-            <ul id="links">
-                <li>
-                    <a href="https://www.facebook.com/seriouslysean">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://www.twitter.com/seriouslysean">Twitter</a>
-                </li>
-                <li>
-                    <a href="https://www.github.com/seriouslysean">GitHub</a>
-                </li>
-            </ul>
+        <main class="container">
+            <h1 class="logo">
+                <img src="/img/logo-splitleaf.svg" alt="Splitleaf, LLC logo" class="logo__img" width="300">
+            </h1>
+            <div class="links">
+                <a title="Facebook" href="https://www.facebook.com/seriouslysean" class="links__link">Facebook</a>
+                <a title="Twitter" href="https://www.twitter.com/seriouslysean" class="links__link">Twitter</a>
+                <a title="GitHub" href="https://www.github.com/seriouslysean" class="links__link">GitHub</a>
+                <a title="LinkedIn" href="https://www.linkedin.com/in/seriouslysean" class="links__link">LinkedIn</a>
+            </div>
         </main>
 
         <script>
