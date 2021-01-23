@@ -1,0 +1,19 @@
+{
+  "name": "splitleaf.net",
+  "version": "1.0.0",
+  "description": "Website for splitleaf.net",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seriouslysean/splitleaf.net.git"
+  },
+  "author": "Sean Kennedy <sean@codeserious.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seriouslysean/splitleaf.net/issues"
+  },
+  "homepage": "https://github.com/seriouslysean/splitleaf.net#readme"
+}
