@@ -2,18 +2,29 @@
   "name": "splitleaf.net",
   "version": "1.0.0",
   "description": "Website for splitleaf.net",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://github.com/seriouslysean/splitleaf.net#readme",
+  "bugs": {
+    "url": "https://github.com/seriouslysean/splitleaf.net/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/seriouslysean/splitleaf.net.git"
   },
-  "author": "Sean Kennedy <sean@codeserious.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/seriouslysean/splitleaf.net/issues"
+  "author": "Sean Kennedy <sean@codeserious.com>",
+  "main": "README.md",
+  "scripts": {
+    "build": "eleventy",
+    "deploy": "npm run build && cp CNAME dist/CNAME && push-dir --dir=dist --branch=gh-pages --cleanup",
+    "dev": "eleventy --serve",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/seriouslysean/splitleaf.net#readme"
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "push-dir": "^0.4.1"
+  }
 }
