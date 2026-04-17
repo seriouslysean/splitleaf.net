@@ -11,7 +11,6 @@ export default defineConfig({
       PUBLIC_BUSINESS_NAME: envField.string({ context: 'client', access: 'public' }),
       PUBLIC_BUSINESS_PHONE: envField.string({ context: 'client', access: 'public' }),
       PUBLIC_BUSINESS_PHONE_E164: envField.string({ context: 'client', access: 'public' }),
-      PUBLIC_GTM_ID: envField.string({ context: 'client', access: 'public' }),
     },
   },
 });
