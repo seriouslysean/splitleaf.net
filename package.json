@@ -12,19 +12,25 @@
   },
   "license": "MIT",
   "author": "Sean Kennedy <sean@codeserious.com>",
-  "main": "README.md",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build": "eleventy",
-    "deploy": "npm run build && cp CNAME dist/CNAME && push-dir --dir=dist --branch=gh-pages --cleanup",
-    "dev": "eleventy --serve",
-    "lint": "eslint . --ext .js",
-    "lint:fix": "eslint . --ext .js --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "eslint": "^7.18.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "push-dir": "^0.4.1"
+    "@astrojs/check": "^0.9.8",
+    "astro": "^6.1.7",
+    "eslint": "^9.39.4",
+    "eslint-plugin-astro": "^1.7.0",
+    "globals": "^17.5.0",
+    "typescript": "^5.9.0"
   }
 }
