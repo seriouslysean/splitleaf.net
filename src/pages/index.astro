@@ -3,7 +3,6 @@ import '../styles/global.css';
 import {
   PUBLIC_SITE_URL,
   PUBLIC_BUSINESS_NAME,
-  PUBLIC_BUSINESS_PHONE_E164,
 } from 'astro:env/client';
 
 const schema = {
@@ -11,7 +10,6 @@ const schema = {
   '@type': 'LocalBusiness',
   name: PUBLIC_BUSINESS_NAME,
   url: PUBLIC_SITE_URL,
-  telephone: PUBLIC_BUSINESS_PHONE_E164,
 };
 ---
 

@@ -9,8 +9,6 @@ export default defineConfig({
     schema: {
       PUBLIC_SITE_URL: envField.string({ context: 'client', access: 'public' }),
       PUBLIC_BUSINESS_NAME: envField.string({ context: 'client', access: 'public' }),
-      PUBLIC_BUSINESS_PHONE: envField.string({ context: 'client', access: 'public' }),
-      PUBLIC_BUSINESS_PHONE_E164: envField.string({ context: 'client', access: 'public' }),
     },
   },
 });
