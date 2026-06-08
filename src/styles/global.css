@@ -14,12 +14,12 @@ body {
   grid-template-rows: 1fr auto;
   font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   color: var(--fg);
-  background:
+  background-color: var(--bg);
+  background-image:
     radial-gradient(
       ellipse 80% 70% at 50% 35%,
       oklch(from var(--bg) calc(l + 0.06) c h),
-      var(--bg) 55%,
-      color-mix(in srgb, var(--bg), var(--link) 30%)
+      var(--bg) 70%
     );
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
