@@ -12,7 +12,7 @@ const schema = {
   '@type': 'LocalBusiness',
   name: PUBLIC_BUSINESS_NAME,
   url: PUBLIC_SITE_URL,
-  telephone: PUBLIC_BUSINESS_PHONE_E164,
+  ...(PUBLIC_BUSINESS_PHONE_E164 ? { telephone: PUBLIC_BUSINESS_PHONE_E164 } : {}),
 };
 ---
 
@@ -23,6 +23,7 @@ const schema = {
     <title>{PUBLIC_BUSINESS_NAME}</title>
     <meta name="description" content={`Website for ${PUBLIC_BUSINESS_NAME}`} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e6ece6" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
@@ -44,7 +45,11 @@ const schema = {
       </nav>
     </main>
     <footer>
-      <small>{PUBLIC_BUSINESS_NAME} · <a href={`tel:${PUBLIC_BUSINESS_PHONE_E164}`}>{PUBLIC_BUSINESS_PHONE}</a></small>
+      <small>
+        {PUBLIC_BUSINESS_NAME}{PUBLIC_BUSINESS_PHONE && (
+          <Fragment> · <a href={`tel:${PUBLIC_BUSINESS_PHONE_E164}`}>{PUBLIC_BUSINESS_PHONE}</a></Fragment>
+        )}
+      </small>
     </footer>
   </body>
 </html>

@@ -1,6 +1,7 @@
 :root {
   --bg: #e6ece6;
   --fg: #00151a;
+  --fg-muted: #4a5d4f;
   --link: #739376;
   --link-hover: #455a48;
   --content-padding: clamp(1.5rem, 5vw, 3rem);
@@ -14,12 +15,12 @@ body {
   grid-template-rows: 1fr auto;
   font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   color: var(--fg);
-  background:
+  background-color: var(--bg);
+  background-image:
     radial-gradient(
       ellipse 80% 70% at 50% 35%,
       oklch(from var(--bg) calc(l + 0.06) c h),
-      var(--bg) 55%,
-      color-mix(in srgb, var(--bg), var(--link) 30%)
+      var(--bg) 70%
     );
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -86,6 +87,7 @@ footer {
   padding: clamp(1rem, 3vw, 1.5rem) var(--content-padding);
   padding-block-end: max(clamp(1rem, 3vw, 1.5rem), env(safe-area-inset-bottom));
   text-align: center;
+  color: var(--fg-muted);
 }
 
 @keyframes rise {
