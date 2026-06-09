@@ -12,7 +12,7 @@ const schema = {
   '@type': 'LocalBusiness',
   name: PUBLIC_BUSINESS_NAME,
   url: PUBLIC_SITE_URL,
-  telephone: PUBLIC_BUSINESS_PHONE_E164,
+  ...(PUBLIC_BUSINESS_PHONE_E164 ? { telephone: PUBLIC_BUSINESS_PHONE_E164 } : {}),
 };
 ---
 
@@ -45,7 +45,11 @@ const schema = {
       </nav>
     </main>
     <footer>
-      <small>{PUBLIC_BUSINESS_NAME} · <a href={`tel:${PUBLIC_BUSINESS_PHONE_E164}`}>{PUBLIC_BUSINESS_PHONE}</a></small>
+      <small>
+        {PUBLIC_BUSINESS_NAME}{PUBLIC_BUSINESS_PHONE && (
+          <Fragment> · <a href={`tel:${PUBLIC_BUSINESS_PHONE_E164}`}>{PUBLIC_BUSINESS_PHONE}</a></Fragment>
+        )}
+      </small>
     </footer>
   </body>
 </html>
